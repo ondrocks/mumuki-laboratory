@@ -1,1 +1,52 @@
-<%= render partial: 'layouts/organizations_listing' %>
+<% @user_organizations.each do |org| %>
+<% end %>
+
+<div class="mu-organizations-cards">
+  <% (@public_organizations + @public_organizations).each do |org| %>
+      <div class="mu-organization-card">
+        <%= image_tag(org.banner_url, class: 'mu-organization-card-banner') %>
+        <h3 class="mu-organization-card-name"><%= org.name %></h3>
+        <p><%= org.description %></p>
+        <%= link_to(t(:go_to, organization: org.name), org.url, class: 'btn btn-success btn-block') %>
+      </div>
+  <% end %>
+</div>
+
+
+<style>
+  .mu-organizations-cards {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .mu-organization-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 320px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px;
+  }
+
+  .mu-organization-card-banner {
+    max-height: 30px;
+    max-width: inherit;
+    object-fit: contain;
+  }
+
+  .mu-organization-card-name {
+    margin: 0;
+    padding: 15px 0;
+    text-align: center;
+    width: 100%;
+    text-transform: capitalize;
+  }
+
+</style>
