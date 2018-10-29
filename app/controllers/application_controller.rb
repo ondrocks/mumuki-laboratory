@@ -24,23 +24,8 @@ class ApplicationController < ActionController::Base
                 :user_notifications_path,
                 :has_notifications?,
                 :subject,
-                :should_choose_organization?,
                 :theme_stylesheet_url,
                 :extension_javascript_url
-
-  def should_redirect_to_main_organization?
-    should_choose_organization? && current_user.has_immersive_main_organization?
-  end
-
-  def redirect_to_main_organization!
-    redirect_to current_user.main_organization.url_for(request.path)
-  end
-
-  def should_choose_organization?
-    current_user? &&
-      current_user.has_accessible_organizations? &&
-      Mumukit::Platform.implicit_organization?(request)
-  end
 
   # ensures contents are accessible to current user
   def validate_accessible!
