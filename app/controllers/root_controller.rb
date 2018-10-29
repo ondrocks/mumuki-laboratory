@@ -1,6 +1,7 @@
 class RootController < ApplicationController
   include Mumukit::Login::AuthenticationHelpers
 
+  skip_before_action :authorize_if_private!
   before_action :redirect_to_main_organization!, if: :should_redirect_to_main_organization?
 
   helper_method :current_user,
