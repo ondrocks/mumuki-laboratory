@@ -1,0 +1,23 @@
+<% organizations.each do |it| %>
+    <div class="chapter">
+      <h3 class="mu-organization-item">
+        <a href="<%= it.url %>">
+          <img src="<%= it.open_graph_image_url %>" alt="<%= it.name %> - Mumuki">
+          <%= it.name %>
+        </a>
+      </h3>
+
+      <div class="text-box">
+        <%= it.description %>
+      </div>
+    </div>
+<% end %>
+
+<style>
+  .mu-organization-item img {
+    height: 1em;
+    width: 1em;
+    object-fit: contain;
+
+  }
+</style>

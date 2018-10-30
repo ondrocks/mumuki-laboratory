@@ -1,52 +1,22 @@
-<% @user_organizations.each do |org| %>
-<% end %>
+<div class="col-md-offset-2 col-md-8">
+  <div class="book-header <%= current_user? ? '' : 'logged' %>">
+    <h1>ム mumuki<%= Organization.current.title_suffix %></h1>
 
-<div class="mu-organizations-cards">
-  <% (@public_organizations + @public_organizations).each do |org| %>
-      <div class="mu-organization-card">
-        <%= image_tag(org.banner_url, class: 'mu-organization-card-banner') %>
-        <h3 class="mu-organization-card-name"><%= org.name %></h3>
-        <p><%= org.description %></p>
-        <%= link_to(t(:go_to, organization: org.name), org.url, class: 'btn btn-success btn-block') %>
-      </div>
+    <img src="<%= Organization.current.banner_url %>" alt="<%= Organization.current.name %> - Mumuki">
+    <h2><%= Organization.current.name %></h2>
+  </div>
+
+  <div class="text-box">
+    <%= Organization.current.description %>
+  </div>
+
+  <% unless @user_organizations.empty? %>
+      <h2><%= t(:private) %></h2>
+
+      <%= render partial: 'root/organizations', locals: {organizations: @user_organizations} %>
+
+      <h2><%= t(:public) %></h2>
   <% end %>
+
+  <%= render partial: 'root/organizations', locals: {organizations: @public_organizations} %>
 </div>
-
-
-<style>
-  .mu-organizations-cards {
-    display: flex;
-    flex-direction: row;
-    flex-flow: wrap;
-    justify-content: space-around;
-    align-items: stretch;
-    width: 100%;
-  }
-
-  .mu-organization-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: stretch;
-    width: 320px;
-    border: 1px solid lightgrey;
-    border-radius: 5px;
-    padding: 15px;
-    margin: 15px;
-  }
-
-  .mu-organization-card-banner {
-    max-height: 30px;
-    max-width: inherit;
-    object-fit: contain;
-  }
-
-  .mu-organization-card-name {
-    margin: 0;
-    padding: 15px 0;
-    text-align: center;
-    width: 100%;
-    text-transform: capitalize;
-  }
-
-</style>

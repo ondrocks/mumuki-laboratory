@@ -21,7 +21,7 @@ class RootController < ApplicationController
 
   def index
     @user_organizations = current_user&.accessible_organizations.to_a
-    @public_organizations = Organization.select(&:public?)
+    @public_organizations = Organization.select(&:public?) - [Organization.base]
   end
 
   def set_current_organization!
