@@ -45,3 +45,4 @@ end
 require_relative './laboratory/extensions'
 require_relative './laboratory/controllers'
 require_relative './laboratory/engine'
+require_relative './laboratory/root_constraint'

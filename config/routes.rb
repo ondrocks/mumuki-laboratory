@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   Mumukit::Login.configure_login_routes! self
 
-  root to: 'root#index'
+  root to: 'root#index', constraints: RootConstraint.new
 
   Mumukit::Platform.map_organization_routes!(self) do
     root to: 'book#show'
