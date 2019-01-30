@@ -3,19 +3,15 @@
     <h1>ム mumuki<%= Organization.current.title_suffix %></h1>
 
     <img src="<%= Organization.current.banner_url %>" alt="<%= Organization.current.name %> - Mumuki">
-    <h2><%= Organization.current.name %></h2>
   </div>
 
-  <div class="text-box">
-    <%= Organization.current.description %>
+  <div class="text-box text-center mu-base-organization-header">
+    <h1 class="text-center"><%= t :choose_your_course %></h1>
+    <p class="text-center"><%= Organization.current.description_html %></p>
   </div>
 
   <% unless @user_organizations.empty? %>
-      <h2><%= t(:private) %></h2>
-
       <%= render partial: 'root/organizations', locals: {organizations: @user_organizations} %>
-
-      <h2><%= t(:public) %></h2>
   <% end %>
 
   <%= render partial: 'root/organizations', locals: {organizations: @public_organizations} %>

@@ -1,23 +1,16 @@
-<% organizations.each do |it| %>
-    <div class="chapter">
-      <h3 class="mu-organization-item">
-        <a href="<%= it.url %>">
-          <img src="<%= it.open_graph_image_url %>" alt="<%= it.name %> - Mumuki">
-          <%= it.name %>
-        </a>
-      </h3>
-
-      <div class="text-box">
-        <%= it.description %>
+<div class="row">
+  <% organizations.sort_by(&:id).each do |it| %>
+      <div class="<%= !it.public? || (['central', 'primaria'].include? it.name) ? 'col-md-12' : 'col-md-6 col-sm-6' %>">
+        <div class="mu-organization-card <%= it.public? ? 'public' : 'private' %>">
+          <div class="mu-organization-card-header">
+            <img src="<%= it.banner_url %>" alt="<%= it.name %>">
+          </div>
+          <div class="mu-organization-card-body">
+            <h4><%= it.name %></h4>
+            <p><%= it.description_html %></p>
+            <h6><a href="/<%= it.name %>">> <%= t :enter %></a></h6>
+          </div>
+        </div>
       </div>
-    </div>
-<% end %>
-
-<style>
-  .mu-organization-item img {
-    height: 1em;
-    width: 1em;
-    object-fit: contain;
-
-  }
-</style>
+  <% end %>
+</div>

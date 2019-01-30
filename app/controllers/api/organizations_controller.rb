@@ -6,7 +6,7 @@ module Api
     before_action :authorize_owner!, only: [:update, :create]
 
     def index
-      render json: { organizations: Organization.accessible_as(current_user, :janitor) }
+      render json: {organizations: Organization.accessible_as(current_user, :janitor)}
     end
 
     def show
@@ -26,3 +26,6 @@ module Api
   end
 
 end
+
+
+

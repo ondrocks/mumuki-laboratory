@@ -1,3 +1,73 @@
+.mu-base-organization-header {
+  margin: 45px 0 30px;
+
+  h1 {
+    color: $mu-color-link;
+    font-weight: bold;
+  }
+}
+
+.mu-organization-card {
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-start;
+  align-content: stretch;
+  flex-direction: column;
+
+  margin-bottom: 30px;
+
+  border: 1px solid $mu-color-dark-separator;
+
+  &.private {
+    color: $mu-color-complementary;
+    border-top: 5px solid $mu-color-complementary;
+    a {
+      text-decoration: none;
+      color: $mu-color-complementary;
+    }
+  }
+  &.public {
+    color: $mu-color-info;
+    border-top: 5px solid $mu-color-info;
+    a {
+      text-decoration: none;
+      color: $mu-color-info;
+    }
+  }
+
+  .mu-organization-card-header {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    width: 100%;
+    padding: 15px;
+    border-bottom: 1px solid $mu-color-dark-separator;
+    height: 90px;
+    img {
+      width: 75%;
+      height: 100%;
+      max-width: 300px;
+      object-fit: contain;
+    }
+  }
+
+  .mu-organization-card-body {
+    padding: 15px;
+    h4 {
+      margin-top: 0;
+      text-transform: capitalize;
+    }
+    h6 {
+      margin: 0;
+    }
+    p {
+      color: $mu-color-primary;
+      font-size: 0.8em;
+    }
+  }
+}
 
 .organization-row {
   height: 50px;
