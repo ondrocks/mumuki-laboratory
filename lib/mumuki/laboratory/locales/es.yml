@@ -30,6 +30,7 @@ es:
   chapter: Capítulo
   chapter_finished_html: ¡Terminaste %{chapter}! ¡Felicitaciones!
   chapter_number: 'Capítulo %{number}'
+  choose_your_course: '¡Elegí tu curso!'
   classroom: Aula
   clear_console: Reiniciar consola
   closed: Cerrada
@@ -66,6 +67,7 @@ es:
   edit: Editar
   editor_placeholder: "...escribí tu solución acá..."
   email: Email
+  enter: Ingresá
   error_description: ¡Ups! <br> Esto es lo que se conoce como <span class="error-link">%{error}</span>.
   error_401: error 401
   error_403: error 403

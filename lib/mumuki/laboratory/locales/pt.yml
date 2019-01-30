@@ -28,6 +28,7 @@ pt:
   chapter: Capítulo
   chapter_finished_html: Você terminou %{chapter}! Parabéns!
   chapter_number: Capítulo %{number}
+  choose_your_course: 'Escolha o seu curso!'
   classroom: Sala de aula
   clear_console: Reiniciar o console
   closed: Fechado
@@ -61,6 +62,7 @@ pt:
   edit: Editar
   editor_placeholder: ... Escreva sua solução aqui ...
   email: E-mail
+  enter: Enter
   error_description: Opa! <br> Isto é o que é conhecido como <span class = "error-link"> %{error} </ span>.
   error_401: erro 401
   error_403: erro 403

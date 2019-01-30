@@ -28,6 +28,7 @@ en:
   chapter: Chapter
   chapter_finished_html: You have finished %{chapter}!
   chapter_number: Chapter %{number}
+  choose_your_course: 'Choose your course!'
   classroom: Classroom
   clear_console: Clear console
   closed: Closed
@@ -58,6 +59,7 @@ en:
   edit: Edit
   editor_placeholder: "write your solution here..."
   email: Email
+  enter: Enter
   error_description: This is known as a <span class="error-link">%{error}</span>.
   error_401: 401 error
   error_403: 403 error
